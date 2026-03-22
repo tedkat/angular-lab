@@ -1,0 +1,12 @@
+{
+  "name": "angular-lab-backend",
+  "dependencies": {},
+  "devDependencies": {
+    "bun-types": "^1.3.11",
+    "@types/bun": "latest"
+  },
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
