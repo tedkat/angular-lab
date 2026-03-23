@@ -1,3 +1,5 @@
+import { sleep } from "bun";
+
 interface Thing {
   id: string;
   name: string;
@@ -90,8 +92,10 @@ Bun.serve({
     },
     // Search or List all things
     '/api/things': {
-      GET: (req): Response => {
+      GET: async (req): Promise<Response> => {
         const url = new URL(req.url);
+        // False Network jitter to show loading
+        await sleep(3000);
         let searchName = url.searchParams.get('name');
         // IF something to search for  return it if found
         if (searchName != null) {

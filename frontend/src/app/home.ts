@@ -1,4 +1,6 @@
+import { httpResource } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Thing } from './model';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styles: ``,
 })
-export class Home {}
+export class Home {
+  readonly things = httpResource<Thing[]>(() => '/api/things');
+}
