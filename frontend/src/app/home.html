@@ -2,6 +2,9 @@
   <div
     class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
   >
+    <button (click)="add()" type="button" class="m-3 p-3 inline-flex items-center justify-center  text-white bg-blue-500 hover:bg-blue-900 focus:ring-4 focus:ring-amber-50 shadow-xs rounded-base w-8 h-8 focus:outline-none">
+      Add
+    </button>
     <table class="w-full text-sm text-left rtl:text-right text-body">
       <thead class="text-sm text-body bg-blue-100 border-b rounded-base border-default">
         <tr>
@@ -13,11 +16,11 @@
       <tbody>
         @for (thing of things.value(); track thing.id) {
           <tr class="bg-white border-b border-default">
-            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
-              {{ thing.name }}
+            <th scope="row" class="pl-6 px-1 py-3 font-medium whitespace-nowrap">
+              <a [routerLink]="['/thing', thing.id]">{{ thing.name }}</a>
             </th>
-            <td class="px-6 py-4">{{ thing.age }}</td>
-            <td class="px-6 py-4">{{ thing.isAlive ? 'Sure' : 'NotSure' }}</td>
+            <td class="pl-6 px-1 py-1">{{ thing.age }}</td>
+            <td class="pl-6 px-1 py-1">{{ thing.isAlive ? 'Sure' : 'NotSure' }}</td>
           </tr>
         }
       </tbody>

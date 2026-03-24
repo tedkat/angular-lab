@@ -86,6 +86,7 @@ Bun.serve({
     '/api/thing': {
       POST: async (req): Promise<Response> => {
         const post: Thing = await req.json() as Thing;
+        post.id = Bun.randomUUIDv7(); // overried whatever id they sent
         THINGS.push(post);
         return Response.json(post, { status: 201 });
       },

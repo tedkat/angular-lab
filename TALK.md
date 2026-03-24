@@ -88,6 +88,17 @@ export const routes: Routes = [
   - @for blocks
 
 
+### Bonus Stuff 
+
+#### API CRUD
+
+```bash
+cd frontend/src/app
+mkdir pages
+ng g c pages/edit -s --skip-tests --flat --dry-run
+ng g c pages/create -s --skip-tests --flat --dry-run
+```
+
 **Rapid development**
 
 - Build and Run Application; Auto Detect source code changes & rebuild
